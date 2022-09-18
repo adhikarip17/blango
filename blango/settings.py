@@ -74,10 +74,10 @@ class Dev(Configuration):
       'debug_toolbar',
 
       #User App
+      'blango_auth',
       'blog',
-
-
   ]
+  AUTH_USER_MODEL = "blango_auth.User"
 
   MIDDLEWARE = [
       'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -203,5 +203,7 @@ class Dev(Configuration):
 class Prod(Dev):
   DEBUG = False
   SECRET_KEY = values.SecretValue()
+
+
 
 
